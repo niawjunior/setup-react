@@ -57,7 +57,7 @@ module.exports = {
 ### Setting up Babel
 
 ```
-> yarn add babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
+> yarn add babel-plugin-transform-decorators-legacy babel-preset-stage-0 babel-plugin-transform-object-rest-spread babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
 ```
 
 ### create .babelrc file
@@ -73,10 +73,15 @@ module.exports = {
     ./.babelrc
 */  
 {
-    "presets":[
-        "es2015", "react"
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
     ]
-}
+  }
 ```
 
 ### Setting up our React Components
